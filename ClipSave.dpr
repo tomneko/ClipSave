@@ -3,7 +3,6 @@
 // $define debug}
 
 uses
-//  memcheck,
   Forms,
   Windows,
   Messages,
@@ -12,7 +11,6 @@ uses
   ClipSaveVersion in 'ClipSaveVersion.pas' {VersionDlg},
   ClipSaveConfig in 'ClipSaveConfig.pas' {ClipSaveConfigForm},
   ClipSaveCreateUDef in 'ClipSaveCreateUDef.pas' {CreateUDefForm},
-  LIB_Tom_DateTime in 'LIB_Tom_DateTime.pas',
   LIB_ClipSave_UDef in 'LIB_ClipSave_UDef.pas',
   Form_Memo in 'Form_Memo.pas' {F_Memo};
 
@@ -88,9 +86,9 @@ begin
     Application.Title := 'ClipSave';
     Application.HelpFile := '';
     Application.CreateForm(TClipSaveMainForm, ClipSaveMainForm);
-    Application.CreateForm(TCreateUDefForm, CreateUDefForm);
-    Application.CreateForm(TF_Memo, F_Memo);
-    ShowWindow(Application.Handle, SW_HIDE);  // ← 追加
+  Application.CreateForm(TCreateUDefForm, CreateUDefForm);
+  Application.CreateForm(TF_Memo, F_Memo);
+  ShowWindow(Application.Handle, SW_HIDE);  // ← 追加
     Application.Run;
   finally
     //終了時に二重起動防止ファイルを削除
